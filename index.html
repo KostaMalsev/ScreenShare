@@ -27,6 +27,13 @@
       }
     }
 
+    function stopCapture(evt) {
+      let tracks = videoElem.srcObject.getTracks();
+    
+      tracks.forEach(track => track.stop());
+      videoElem.srcObject = null;
+    }
+    
     const videoElem = document.getElementById("video");
     const logElem = document.getElementById("log");
     const startElem = document.getElementById("start");
